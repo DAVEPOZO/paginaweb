@@ -1,0 +1,60 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  background: #4a90e2;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(74 144 226 / 0.3);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.seccion {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgb(0 0 0 / 0.05);
+  margin-bottom: 30px;
+  transition: box-shadow 0.3s ease;
+}
+
+.seccion:hover {
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+}
+
+.seccion p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.imagen {
+  display: block;
+  margin: 20px auto 0 auto; /* centra la imagen y espacio arriba */
+  max-width: 90%;
+  height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.imagen:hover {
+  transform: scale(1.05);
+}
+p {
+  border: 2px solid #4a90e2; /* borde azul moderno */
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: #f0f8ff; /* fondo claro para destacar */
+  margin-bottom: 20px; /* separación entre párrafos */
+   /* opcional, para limitar ancho y que no quede muy largo */
+}

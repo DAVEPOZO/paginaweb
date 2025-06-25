@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="consultar.css">
+</head>
+<body>
+    
+<h1>¿Qué ES FLEXBOX?</h1>
+<section class="seccion seccion-flexbox-intro">
+  <p>
+    CSS Flexbox, presentado en 2009, es un potente sistema de diseño unidimensional diseñado para ayudarte a crear páginas web adaptables y organizar elementos fácilmente. Rápidamente se convirtió en el método predilecto para diseños modernos, ya que elimina la necesidad de trucos complejos como flotantes y posicionamiento.
+    <br><br>
+    Flexbox le permite organizar elementos en filas o columnas, lo que simplifica el control del espaciado, la alineación y el orden dentro de un contenedor.
+  </p>
+  <img class="imagen" src="https://storage.googleapis.com/wp-ida/sites/5/2017/12/Porque%CC%81-comenzar-a-utilizar-flexbox.png" alt="Flexbox introducción">
+</section>
+
+<h1>Uso Básico</h1>
+<section class="seccion seccion-uso-basico">
+  <p>
+    Antes de explicar cuándo usar Flexbox y Grid, repasemos algunas propiedades que diferencian estos conceptos. Si quieres profundizar en las propiedades de Flexbox y Grid, o cómo empezar a usarlos, puedes consultar estos artículos para principiantes sobre Flexbox y Grid, respectivamente.
+  </p>
+
+  <p>
+    Supongamos que tenemos un elemento <code>&lt;div&gt;</code> en nuestro HTML que sirve como contenedor para tres elementos secundarios. Solo necesitas crear un contenedor flexible usando la propiedad. Después, cada elemento dentro de ese contenedor flexible se convierte en un elemento flexible: <code>display: flex</code><br><br>
+    El código correspondiente sería:
+  </p>
+
+  <pre><code>
+&lt;div class="contenedor"&gt;
+  &lt;div id="uno"&gt;1&lt;/div&gt;
+  &lt;div id="dos"&gt;2&lt;/div&gt;
+  &lt;div id="tres"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+.contenedor {
+  display: flex;
+}
+  </code></pre>
+
+  <!-- <div class="flex-ejemplo">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> -->
+
+  <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/items-inside-container-flex-applied.png" alt="Ejemplo visual de Flexbox">
+</section>
+
+    <h1>Direcciones y ejes flexibles</h1>
+    <p>
+        En nuestro contenedor flexible, podríamos definir una dirección para los elementos. Las direcciones flexibles más utilizadas son rowy column. Nuestro CSS correspondiente se vería así:
+        . contenedor { flex - dirección : fila | columna ; }
+    </p>
+    <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/flex-direction.png" alt="">
+
+    <p>
+        En algunos casos, se podría establecer en o . Un aspecto importante a tener en cuenta en las direcciones flexibles es el concepto de ejes.flex-directionrow-reversecolumn-reverse
+
+Dependiendo de la dirección de flexión, podemos tener un eje principal y un eje transversal. Si la dirección de flexión es fila, el eje principal está en dirección horizontal y el eje transversal en dirección vertical. Lo contrario ocurre cuando la dirección de flexión es columna. Esto será útil al analizar la alineación:
+    </p>
+    <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/flex-direction-aligning-rows-columns.png" alt="">
+
+  <h1>Direcciones y ejes flexibles</h1>
+<section class="seccion seccion-ejes-flex">
+  <p>
+    En nuestro contenedor flexible, podríamos definir una dirección para los elementos. Las direcciones flexibles más utilizadas son <code>row</code> y <code>column</code>. Nuestro CSS correspondiente se vería así:
+  </p>
+
+  <pre><code>
+.contenedor {
+  flex-direction: row | column;
+}
+  </code></pre>
+
+  <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/flex-direction.png" alt="Dirección de flexbox">
+
+  <p>
+    En algunos casos, se podría establecer <code>flex-direction</code> en <code>row-reverse</code> o <code>column-reverse</code>. 
+    Un aspecto importante a tener en cuenta en las direcciones flexibles es el concepto de ejes.
+  </p>
+
+  <p>
+    Dependiendo de la dirección de flexión, podemos tener un eje principal y un eje transversal. 
+    Si la dirección de flexión es <strong>fila</strong>, el eje principal está en dirección horizontal y el eje transversal en dirección vertical. 
+    Lo contrario ocurre cuando la dirección de flexión es <strong>columna</strong>. 
+    Esto será útil al analizar la alineación:
+  </p>
+
+  <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/flex-direction-aligning-rows-columns.png" alt="Ejes flexibles">
+</section>
+
+<h1>Envolver artículos</h1>
+<section class="seccion seccion-flex-wrap">
+  <p>
+    De forma predeterminada, los elementos flexibles intentan caber en una sola línea. 
+    Puedes permitir que ocupen varias líneas usando <code>flex-wrap</code>:
+  </p>
+
+  <pre><code>
+.contenedor {
+  flex-wrap: wrap | nowrap | wrap-reverse;
+}
+  </code></pre>
+
+  <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/flex-wrap-visualization.png" alt="Visualización de flex-wrap">
+
+  <p>
+    El problema con <code>flex-wrap</code>, sin embargo, es que al envolverse, los elementos forman su propia línea flexible debajo de los superiores, por lo que no están perfectamente alineados con los elementos superiores. 
+    Esto se observa cuando, por ejemplo, <code>item4</code> e <code>item5</code> se extienden para llenar todo el espacio debajo de los elementos superiores.
+  </p>
+</section>
+
+
+   <h1>Alineación y ordenamiento</h1>
+<section class="seccion seccion-alineacion">
+  <p>
+    Flexbox tiene muchas otras propiedades que podemos usar para crear cosas increíbles. Podemos ordenar los elementos como queramos, invertir su orden, determinar si deben crecer o contraerse, etc.
+  </p>
+
+  <p>
+    Un concepto que hace tan útil a Flexbox es la capacidad de alineación de elementos dentro del contenedor flexible. Para demostrarlo, veamos algunas propiedades de Flexbox relacionadas con la alineación, como <code>align-self</code> y <code>justify-content</code>.
+  </p>
+
+  <p>
+    Por ejemplo, imaginemos que nuestro contenedor <code>&lt;div&gt;</code> ahora tiene cuatro elementos, con el mismo ancho y alto:
+  </p>
+
+  <pre><code>
+&lt;div id="contenedor"&gt;
+  &lt;div id="uno"&gt;1&lt;/div&gt;
+  &lt;div id="dos"&gt;2&lt;/div&gt;
+  &lt;div id="tres"&gt;3&lt;/div&gt;
+  &lt;div id="cuatro"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+
+#uno {
+  align-self: flex-start | flex-end | center | stretch;
+}
+  </code></pre>
+
+  <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/align-self-property-1.png" alt="Ejemplo align-self">
+
+  <p>
+    En lugar de alinear cada elemento individualmente, supongamos que queremos alinear todos los elementos dentro del contenedor. Para ello, usaremos <code>justify-content</code>. Supongamos que, en lugar de cuatro, tenemos tres elementos en nuestro contenedor:
+  </p>
+
+  <pre><code>
+.contenedor {
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+  </code></pre>
+
+  <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/justify-content-property.png" alt="Ejemplo justify-content">
+
+  <p>
+    Puedes observar lo fácil que es alinear el contenido dentro de los contenedores flexibles, ya sean elementos individuales dentro del contenedor o todos juntos. 
+    Las funciones anteriores solo muestran algunas propiedades comunes de Flexbox y lo fácil que es administrar pequeñas partes de tu diseño.
+  </p>
+</section>
+
+   <h1>¿Qué es CSS Grid?</h1>
+<section class="seccion seccion-grid-intro">
+  <p>
+    Mientras que Flexbox es un sistema de diseño unidimensional (que gestiona filas o columnas), CSS Grid lleva el diseño a un nuevo nivel al ser un sistema bidimensional. Esto significa que permite trabajar con filas y columnas simultáneamente, lo que lo convierte en la herramienta de diseño CSS más potente disponible actualmente.
+  </p>
+  <p>
+    Grid te permite crear diseños complejos y organizados sin recurrir a trucos CSS obsoletos. Es perfecto para crear diseños robustos y estructurados con un control preciso sobre ambos ejes.
+  </p>
+
+  <h1>Introducción a CSS Grid</h1>
+  <p>
+    Utilicemos el fragmento HTML a continuación y veamos cómo podemos obtener un diseño de cuadrícula a partir de él:
+  </p>
+
+  <pre><code>
+&lt;div class="contenedor"&gt;
+  &lt;div id="uno"&gt;1&lt;/div&gt;
+  &lt;div id="dos"&gt;2&lt;/div&gt;
+  &lt;div id="tres"&gt;3&lt;/div&gt;
+  &lt;div id="cuatro"&gt;4&lt;/div&gt;
+  &lt;div id="cinco"&gt;5&lt;/div&gt;
+&lt;/div&gt;
+
+.contenedor {
+  display: grid;
+}
+
+grid-template-columns: 60px 60px;
+grid-template-rows: auto;
+  </code></pre>
+
+  <p>
+    Para definir un contenedor de cuadrícula, solo necesita pasar una propiedad a su elemento de bloque. Ahora tiene una cuadrícula, así que debe definir cuántas filas y columnas desea.
+  </p>
+
+  <p>
+    Para crear filas y columnas, utilizamos las propiedades <code>grid-template-rows</code> y <code>grid-template-columns</code>, y pasamos valores que indican cuánto se extenderán nuestros elementos de cuadrícula a través del contenedor:
+  </p>
+
+  <p>
+    Desde arriba, podemos ver que nuestro diseño se establecerá en dos columnas, cada una ocupando 60 px del contenedor, y dado que hay cinco elementos, tendremos tres filas que abarcarán todo el contenedor debido al atributo <code>auto</code>.
+  </p>
+
+  <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/editing-column-layout.png" alt="Ejemplo de layout CSS Grid">
+
+  <h1>Alineación de elementos en la cuadrícula</h1>
+  <p>
+    Al igual que ahora, Grid también cuenta con propiedades que permiten alinear elementos dentro del contenedor. Un ejemplo es la propiedad <code>justify-self</code>. Esta propiedad alinea un elemento de la cuadrícula dentro de su celda, a lo largo del eje de la fila:
+  </p>
+
+  <pre><code>
+#one {
+  justify-self: start | end | center | stretch;
+}
+  </code></pre>
+
+  <p>Tomando el primer elemento de nuestro contenedor de cuadrícula como ejemplo:</p>
+  <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/justify-self-property.png" alt="Ejemplo justify-self en CSS Grid">
+
+  <p>
+    Cabe destacar que no es la única propiedad de alineación que posee la cuadrícula. También podríamos usar <code>justify-content</code>, <code>justify-items</code>, <code>align-items</code> y <code>align-self</code>. Es fácil observar que la cuadrícula ofrece mayor flexibilidad para alinear y crear diseños complejos.
+  </p>
+
+  <h1>Propiedades que comparten Flexbox y Grid</h1>
+  <p>
+    Si bien Flexbox y CSS Grid difieren en muchos aspectos, comparten puntos en común importantes, empezando por su propósito principal: ambos son potentes sistemas de diseño diseñados para reemplazar técnicas antiguas y engorrosas como los flotantes y los trucos de posicionamiento. Hoy en día, simplifican e intuitivos la creación de diseños complejos y adaptables.
+  </p>
+
+  <p>
+    Tanto Flexbox como Grid admiten propiedades de alineación clave que le ayudan a controlar la posición de los elementos dentro de los contenedores:
+  </p>
+
+  <ul>
+    <li><code>justify-content</code> — Alinea los elementos a lo largo del eje principal (horizontal en la fila de Flexbox, horizontal en la cuadrícula de forma predeterminada)</li>
+    <li><code>align-content</code> — Administra el espaciado entre filas o columnas cuando hay espacio adicional</li>
+    <li><code>align-items</code> — Alinea todos los elementos dentro del contenedor en el eje transversal (vertical en la fila de Flexbox)</li>
+    <li><code>align-self</code> — Permite que los elementos individuales anulen la configuración de alineación del contenedor</li>
+  </ul>
+
+  <p>
+    Estas propiedades compartidas proporcionan consistencia y facilitan el cambio entre Flexbox y Grid según sus necesidades de diseño.
+  </p>
+
+  <h1>CSS Grid es para el diseño; Flexbox es para la alineación</h1>
+  <p>
+    Cuando se lanzó Flexbox por primera vez, pensamos que podría ser el mejor sistema de diseño para usar en la creación de nuestras páginas web, pero no lo fue.
+  </p>
+  <p>
+    Flexbox ayudó a los desarrolladores a comenzar a crear aplicaciones web más receptivas y fáciles de mantener, pero la idea principal de un sistema de diseño unidimensional no tiene sentido cuando se necesita crear un diseño más complejo.
+  </p>
+  <p>
+    CSS Grid nos ayudó a crear diseños de maquetación más complejos de forma bidimensional, utilizando tanto filas como columnas. Deberíamos intentar usar ambos juntos, pero con diferentes propósitos. Para el diseño, usa CSS Grid; para la alineación de los elementos, usa Flexbox.
+    Para dominar y saber exactamente cuándo vas a necesitar y cómo usar CSS Grid, primero debes aprender los conceptos básicos y cómo funciona Flexbox, porque cuando necesites la alineación de elementos en tu aplicación, es Flexbox lo que querrás usar.
+  </p>
+</section>
+
+   <section class="seccion">
+  <h1>Cuándo usar CSS Flexbox</h1>
+  <p>
+    Tienes un diseño pequeño para implementar: Flexbox es ideal cuando tienes un diseño de diseño pequeño para implementar, con unas pocas filas o unas pocas columnas.<br><br>
+    Necesitas alinear elementos: Flexbox es perfecto para eso, lo único que debemos hacer es crear un contenedor flexible usando <code>display: flex</code> y luego definir la dirección flexible que queremos.<br><br>
+    Necesitas un diseño que priorice el contenido : Flexbox es el sistema de diseño ideal para crear páginas web si no sabes exactamente cómo se verá tu contenido, así que si quieres que todo encaje, Flexbox es perfecto para eso.<br><br>
+    Claro que puedes crear toda tu aplicación usando solo Flexbox y obtener el mismo resultado que con CSS Grid. Pero para un mejor enfoque CSS, para tener una aplicación más concisa, bien escrita y fácil de mantener a largo plazo, y para crear y ajustar tu diseño a la perfección, el método ideal es usar CSS Grid.
+  </p>
+</section>
+
+   <section class="seccion">
+  <h1>Cuándo usar CSS Grid</h1>
+  <p>
+    Tienes un diseño complejo que implementar: En algunos casos de uso, tenemos diseños complejos que implementar, y ahí es donde la magia de CSS Grid se manifiesta. El sistema de diseño bidimensional es perfecto para crear un diseño complejo. Podemos usarlo a nuestro favor para crear páginas web más complejas y fáciles de mantener.<br><br>
+    Necesitas un espacio entre los elementos del bloque: Otra característica muy útil en CSS Grid, que no tenemos en Flexbox, es la propiedad <code>gap</code>. Podemos definir el espacio entre nuestras filas o columnas fácilmente, sin tener que usar la propiedad <code>margin</code>, que puede causar efectos secundarios, especialmente si trabajamos con muchos puntos de interrupción.<br><br>
+    Necesitas superponer elementos: Superponer elementos con CSS Grid es muy fácil; solo necesitas usar las propiedades <code>grid-column</code> y <code>grid-row</code> y podrás tener elementos superpuestos fácilmente. Por otro lado, con Flexbox aún necesitamos usar algunos trucos como márgenes, transformaciones o posicionamiento absoluto.<br><br>
+    Necesita un diseño que priorice el diseño: cuando ya tiene la estructura de diseño, es más fácil construir con CSS Grid, y el sistema de diseño bidimensional nos ayuda mucho cuando podemos usar filas y columnas juntas y posicionar los elementos de la manera que queremos.<br><br>
+    Antes de decidir cuál utilizar, no olvides:<br><strong>CSS Grid es para diseño; Flexbox es para alineación.</strong>
+  </p>
+
+  <p>
+    Aquí tienes un ejemplo del uso correcto de CSS Grid. Imaginemos que vamos a crear una aplicación sencilla, y que su estructura básica se verá similar a esta:
+  </p>
+  <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/css-grid-example.png" alt="Ejemplo CSS Grid">
+
+  <p>Tenemos un encabezado, un menú lateral, el contenido del bloque principal y un pie de página. Para crear este diseño con CSS Grid, solo necesitamos crear nuestros elementos:</p>
+  <pre><code>
+&lt;div id="contenedor"&gt;
+  &lt;header&gt;Encabezado&lt;/header&gt;
+  &lt;aside&gt;Aparte&lt;/aside&gt;
+  &lt;main&gt;Principal&lt;/main&gt;
+  &lt;footer&gt;Pie de página&lt;/footer&gt;
+&lt;/div&gt;
+  </code></pre>
+
+  <p>
+    Ahora, crea un contenedor de cuadrícula usando <code>display: grid</code> y luego crea algunas filas y columnas.
+  </p>
+
+  <p>
+    Creamos nuestro diseño de forma muy sencilla, sin tener que utilizar hacks como <code>float</code> o posicionar nuestros elementos, y sin tener que crear muchos contenedores flexibles.<br><br>
+    La mejor decisión que puede tomar para su aplicación con el fin de crear un diseño web muy decente y bien construido para su aplicación es utilizar ambos juntos.<br><br>
+    Tomemos nuestro ejemplo y usemos CSS Grid y Flexbox para mostrar la potencia de ambos sistemas de diseño. Dentro de nuestro <code>header</code>, crearemos tres <code>div</code> elementos y los alinearemos en una fila:
+  </p>
+
+  <pre><code>
+&lt;header&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/header&gt;
+  </code></pre>
+
+  <p>
+    Para hacer eso, todo lo que necesitamos hacer es declarar nuestro <code>header</code> contenedor flexible usando la propiedad <code>display: flex</code>, hacer que la dirección flexible sea una fila usando <code>flex-direction: row</code> y alinear los elementos.
+  </p>
+
+  <p>
+    Consulta el Code Sandbox correspondiente a este código. Experimenta con él para ver cómo puedes modificar el diseño.<br><br>
+    Por ahora nuestra pequeña página web se ve así:
+  </p>
+  <img class="imagen" src="https://blog.logrocket.com/wp-content/uploads/2023/01/web-page-header.png" alt="Ejemplo de página web con header flexbox">
+
+  <p>
+    Para un estilo de diseño principal, puedes usar CSS Grid, ya que es un sistema de diseño bidimensional y permite trabajar fácilmente con filas y columnas. Para un estilo de diseño más simple, puedes usar Flexbox, un sistema unidimensional, muy útil al trabajar con filas.
+  </p>
+</section>
+
+
+
+</body>
+</html>
